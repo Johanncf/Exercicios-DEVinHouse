@@ -1,0 +1,17 @@
+
+
+- O backend faz a conexão do front com o servidor. 
+- Pode fazer buscas em banco de dados, mas de forma geral em fonte de dados (SAP, por exemplo)
+
+- O UX cuida da experiencia do usuário. Busca tornar a experiência mais intuitiva, orgânica. 
+	Feature flag - Características programadas para realizar testes A/B.
+	Teste A/B - Criação de versões diferentes de um mesmo produto para avaliar o que gera melhor retorno.
+
+- O Designer cria o protótipo estético para o front desenvolver. Utiliza plataformas como Figma para prototipar.
+
+- O Frontend trabalha nos códigos que produzem a parte da aplicação que conversa diretamente com o usuário.
+
+- DevOps é um desenvolvedor focado em operações/infraestrutura. Garante a qualidade da operação independente da quantidade de deploys numa aplicação.
+	Conversa mt com deploy
+
+- Bootstrap é salvador. Melhora responsividade, estilização e padroniza essas coisas. Dá pra alterar o que quiser usando o resto tb.
