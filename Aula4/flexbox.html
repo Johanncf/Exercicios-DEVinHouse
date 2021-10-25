@@ -7,17 +7,41 @@
     <title>Document</title>
 
     <style>
+        .container{
+            padding: 15% 10%;
+            text-align: center;
+        }
+        .flex-container{
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
         .flexbox{
             flex-direction: row;
             display: flex;
+            padding: 5%;
+            justify-content: space-evenly;
+            max-width: 100%;
+            justify-content: space-evenly;
         }
+
+        .flexbox div{
+            border: 1px solid black;
+            margin: 0 10px;
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="flexbox">
-        <div>A</div>
-        <div>B</div>
-        <div>C</div>
+    <div class="container">
+        <div class="flex-container">
+            <div class="flexbox">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
