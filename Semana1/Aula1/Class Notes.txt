@@ -1,8 +1,0 @@
-HTML 5 x HTML 4:
-
-	- HTML 5 cria tags específicas pra coisas que antes ficaram em div
-	- É muito importante usar as tags certas porque:
-		1º: Se um app novo for criado, seu site vai ser compatível com ele
-		2º: Os buscadores da web priorizam sites que se utilizam de marcadores precisos. 
-
-		OBS.: Esses elementos estao associados à Search Engine Optimization (SEO)
