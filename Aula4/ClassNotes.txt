@@ -20,5 +20,11 @@ Centralização horizontal de elementos no CSS:
 
 Centralização vertical de elementos no CSS:
 	- Pra centralizar algo, precisamos saber "em relação ao que?"
-	- Precisamos criar um container-base e usar a unidade viewport
-	- Os containers dentro do pai(base)
+	- Precisamos criar um container-base e usar a unidade viewport em 100vh
+	- Os containers dentro do pai(base) vão se basear na base 
+
+	.base-container{
+		height: 100vh
+		align-itens: center
+		display: flex
+	}
