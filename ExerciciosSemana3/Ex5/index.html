@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada</title>
+    <script src="script.js"></script>
+    <style>
+        main{
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #container{
+            height: 300px;
+            width: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            /* background-image: url(https://raw.githubusercontent.com/phmonte/devinhouse/main/Aulas/Javascript/imagens/luz-acesa.png); */
+        }
+
+        #img-container{
+            margin-bottom: 10px;
+
+        }
+
+        #btn{
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        #lamp{
+            width: 100%;
+        }
+    </style>
+</head>
+<body onload="carrega()">
+    <main>
+        <div id="container">
+            <div id="img-container">
+                <img src="https://raw.githubusercontent.com/phmonte/devinhouse/main/Aulas/Javascript/imagens/luz-apagada.png" id="lamp"  >
+            </div>
+            <button type="button" id="btn" onclick="ligaDesliga()">Liga/Desliga</button>
+        </div>
+    </main>
+    
+</body>
+</html>
