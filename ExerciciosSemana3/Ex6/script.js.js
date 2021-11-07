@@ -15,15 +15,8 @@ function Gravar() {
     enderecoPessoa.nome = document.getElementById("nomes").value
     enderecoPessoa.endereco = document.getElementById('endereço').value
     enderecoPessoa.tipoEndereco = document.getElementById('residencia').value
-    enderecoPessoa.actions = '<i class="fas fa-trash"></i>'
 
-    if (enderecoPessoa.tipoEndereco === 'Residencial') {
-        var icon = '<i class="fa fa-home"></i> '
-    } else {
-        var icon = '<i class="fa fa-building"></i> '
-    }
-
-    enderecoPessoa.tipoEndereco = icon + enderecoPessoa.tipoEndereco
+    
     
     listaEnderecoPessoa.push(enderecoPessoa)
 
