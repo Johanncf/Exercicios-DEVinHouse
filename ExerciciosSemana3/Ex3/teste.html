@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="teste.js" defer></script>
+    <style>
+        .container{
+            width: 30vw;
+            min-width: 180px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .result{
+            height: 50px;
+            border: 1px solid;
+            padding-left: 5px;
+            margin-bottom: 2%;
+        }
+
+        .inputs{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .inputs div{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 50%;
+        }
+
+        .btns{
+            width: 20%;
+            margin: 0 auto;
+        }
+
+        #campo{
+            width: 100%;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result">
+
+        </div>
+        <div class="inputs">
+            <div>
+                <input type="text" id="campo">
+            </div>
+            <div>
+
+                <button onclick="soma()" id="soma" class="btns">+</button>
+                <button onclick="subtrai()" id="subtrai" class="btns">-</button>
+                <button onclick="multiplica()" id="multiplica" class="btns">x</button>
+                <button onclick="divide()" id="divide" class="btns">÷</button>
+                <button onclick="igual()" id="igual" class="btns">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
