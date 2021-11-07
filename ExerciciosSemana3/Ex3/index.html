@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <script src="script.js" defer></script>
+    <script src="teste.js" defer></script>
     <style>
         .container{
             width: 30vw;
-            min-width: 180px;
+            min-width: 250px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -39,7 +39,7 @@
         }
 
         .btns{
-            width: 25%;
+            width: 20%;
             margin: 0 auto;
         }
 
@@ -57,7 +57,7 @@
         </div>
         <div class="inputs">
             <div>
-                <input type="number" id="campo">
+                <input type="text" id="campo" autofocus>
             </div>
             <div>
 
@@ -65,6 +65,7 @@
                 <button onclick="subtrai()" id="subtrai" class="btns">-</button>
                 <button onclick="multiplica()" id="multiplica" class="btns">x</button>
                 <button onclick="divide()" id="divide" class="btns">÷</button>
+                <button onclick="igual()" id="igual" class="btns">=</button>
             </div>
         </div>
     </div>
