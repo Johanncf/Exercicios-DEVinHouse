@@ -29,27 +29,11 @@
                     <label for="tel">Telefone: </label>
                     <input type="tel" id="tel">
                     <label for="endereço">Endereço completo: </label>
-                    <input type="text" id="endereço">
+                    <input type="text" class="endereço">
+                    <button type="button" id="add-btn" onclick="adiciona()">Adiciona Endereço</button>
                 </fieldset>
             </form>
         </section>
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>Email/Comercial</th>
-                        <th>Telefone</th>
-                        <th>Endereço</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                    
-                </tbody>
-            </table>
-        </section>
-        <p>Total Registros: <span id="totalRegistros"></span></p>
     </main>
     <script src="script.js"></script>
 </body>
