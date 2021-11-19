@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .flex-container {
+            /* We first create a flex layout context */
+            display: flex;
+
+            /* Then we define the flow direction 
+                and if we allow the items to wrap 
+            * Remember this is the same as:
+            * flex-direction: row;
+            * flex-wrap: wrap;
+            */
+            flex-flow: row wrap;
+
+            /* Then we define how is distributed the remaining space */
+            justify-content: center;
+
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            row-gap: 10px;
+            column-gap: 30px;
+        }
+
+        .flex-item {
+            background: tomato;
+            padding: 5px;
+            width: 200px;
+            height: 150px;
+            margin-top: 10px;
+            line-height: 150px;
+            color: white;
+            font-weight: bold;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .controles{
+            text-align: center;
+        }
+
+        .controles label{
+            display: block;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="controles">
+        <label onchange="mudaCor()">
+            <b>Cor</b>
+            <input type="color" id="color" >
+        </label>
+        <br>
+        <br>
+        <label>
+            <b>justify-content</b>
+            <select onchange="jtf()" id="jtf">
+                <option>center</option>
+                <option>space-evenly</option>
+                <option>space-between</option>
+                <option>space-around</option>
+                <option>flex-start</option>
+                <option>flex-end</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <button onclick="inverte()">Inverte a Ordem</button>
+        <br>
+        <br>
+        <button onclick="adiciona()">Adiciona Item</button>
+    </div>
+    <br>
+    <ul class="flex-container">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+        <li class="flex-item">6</li>    
+    </ul>
+</body>
+<script>
+    var item = document.querySelectorAll(".flex-item")
+    var i = document.getElementsByClassName("flex-item").length
+    const lista = document.querySelector(".flex-container")
+
+    var ordenado = true
+    function adiciona(){
+        i++
+        var novaLinha = document.createElement("li")
+        novaLinha.innerHTML = i
+        novaLinha.className = "flex-item"
+        lista.appendChild(novaLinha)
+        item = document.querySelectorAll(".flex-item")
+        mudaCorDoItem()
+    }
+
+    function mudaCorDoItem(){
+        item.forEach(e => {
+            e.addEventListener("click", () => {
+                e.style.backgroundColor = document.getElementById("color").value
+            })
+        })
+    }
+
+    function mudaCor(){
+        mudaCorDoItem()
+    }
+
+    mudaCorDoItem()
+
+    function inverte(){
+        if(ordenado){
+            lista.style.flexFlow = "row-reverse wrap-reverse"
+            ordenado = false
+        }else{
+            lista.style.flexFlow = "row wrap"
+            ordenado = true
+        }
+
+    }
+
+    function jtf(){
+        lista.style.justifyContent = document.getElementById("jtf").value
+    }
+
+</script>
+
+</html>
