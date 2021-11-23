@@ -21,6 +21,12 @@ class Cliente {
         }
         this.numCel = numCel;
     }
+    
+    adicionaEndereco(endereco) {
+      if (endereco instanceof Endereco) {
+        this.endereco.push(endereco)
+      }
+    }
 }
 
 class Conta { 
