@@ -15,11 +15,19 @@ class Endereco {
 
 class Cliente { 
     constructor(nome, cpf, endereco, numCel) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.endereco = [];
-        this.endereco.push(endereco);
-        this.numCel = numCel;
+        if (endereco instanceof Endereco) {
+            this.nome = nome;
+            this.cpf = cpf;
+            this.endereco = [];
+            this.endereco.push(endereco);
+            this.numCel = numCel;
+        }
+    }
+
+    adicionaEndereco(endereco) {
+        if (endereco instanceof Endereco) {
+          this.endereco.push(endereco)
+        }
     }
 }
 

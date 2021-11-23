@@ -13,13 +13,13 @@ class Endereco {
 
 class Cliente { 
     constructor(nome, cpf, endereco, numCel) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.endereco = [];
         if (endereco instanceof Endereco) {
+            this.nome = nome;
+            this.cpf = cpf;
+            this.endereco = [];
             this.endereco.push(endereco);
+            this.numCel = numCel;
         }
-        this.numCel = numCel;
     }
     
     adicionaEndereco(endereco) {
@@ -31,9 +31,9 @@ class Cliente {
 
 class Conta { 
     constructor(numConta, saldo, cliente) {
-        this.numConta = numConta;
-        this.saldo = saldo;
         if (cliente instanceof Cliente) {
+            this.numConta = numConta;
+            this.saldo = saldo;
             this.Cliente = cliente;
         }
     }
