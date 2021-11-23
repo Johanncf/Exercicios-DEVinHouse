@@ -10,6 +10,7 @@ export class Endereco {
     }
 
 }
+
 export function criaCorpoDeTabela(listaDeEnderecos, tbody) {
     listaDeEnderecos.forEach(endereco => {
         let tr = document.createElement("tr")
