@@ -1,0 +1,66 @@
+body {
+    background-color:rgb(238, 233, 207);
+}
+
+.container {
+    width: 100vw;
+}
+
+.container-layout {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    column-gap: 30px;
+    margin: 100px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+form h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+form input:not(.submit), textarea {
+    border: none;
+    border-radius: 0;
+    background-color: rgb(255, 210, 97) ;
+    outline: none;
+    height: 30px;
+}
+
+.submit {
+    border: none;
+    background-color: black;
+    color: rgb(255, 210, 97);
+    height: 50px;
+    cursor: pointer;
+}
+
+#description {
+    resize: none;
+    height: 100px;
+}
+
+.model {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: rgb(255, 210, 97);
+    padding: 20px;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#model-description {
+    margin: 0;
+}
+
+
+
