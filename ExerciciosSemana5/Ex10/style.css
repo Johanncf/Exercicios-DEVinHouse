@@ -1,0 +1,21 @@
+img {
+    width: 300px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(134, 141, 240);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
