@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário DEV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        body {
+            
+            height: 100vh;
+            width: 100vw;
+        }
+
+        body header {
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .container {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(155deg, rgba(2, 0, 36, 1) 0%, rgba(163, 59, 255, 0.9436392914653784) 0%, rgba(0, 212, 255, 1) 100%);
+            background-repeat: no-repeat;
+            width: 70%;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        .perfil-container {
+            display: flex;
+            column-gap: 10px;
+        }
+
+
+        .container section {
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+
+        }
+
+        #previa {
+            height: fit-content;
+            padding: 20px;
+            text-align: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+
+        }
+
+        #previa img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+        }
+
+        #previa article {
+            background: rgb(241, 241, 241);
+            padding: 10px;
+            border: 1px solid rgb(180, 180, 180);
+            border-radius: 5px;
+            margin: 0.8em;
+        }
+
+        #formulario {
+            padding: 20px;
+            flex-shrink: 2;
+            flex-grow: 2;
+        }
+
+        #formulario  header {
+            margin: 0;
+            background-color: rgb(241, 241, 241);
+            border-bottom: 1px solid rgb(180, 180, 180);
+        }
+
+        #formulario h2 {
+            margin: 0;
+            padding: 15px;
+        }
+
+        #formulario nav {
+            padding-left: 15px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Arimo', sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover {
+            border-bottom: 2px solid #9488b3;
+        }
+
+        #formulario form {
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 100px;
+            grid-column-gap: 1em;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Perfil DEV</h1>
+        </header>
+        <div class="perfil-container">
+            <section id="previa">
+                <h3>Jane Doe</h3>
+                <h4>@jane</h4>
+                <img src="https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <article>
+                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+                </article>
+                <br><br><br><br><br>
+                <footer>
+                    <p>Ultima atualização em <strong>04 de dezembro</strong></p>
+                </footer>
+            </section>
+            <section id="formulario">
+                <header>
+                    <h2>Editar Perfil</h2>
+                    <nav>
+                        <button class="nav-btn">Infos</button>
+                        <button class="nav-btn">Perfil</button>
+                    </nav>
+                </header>
+    
+                <form data-form>
+                    <label>
+                        Nome completo:<br>
+                        <input type="text">
+                    </label>
+                    <label>
+                        Nome de usuário:<br>
+                        <input type="text">
+                    </label>
+                    <label>
+                        Senha:<br>
+                        <input type="password">
+                    </label>
+                    <label>
+                        Confirme a senha:<br>
+                        <input type="password">
+                    </label>
+                    <label>
+                        E-mail:<br>
+                        <input type="email">
+                    </label>
+                    <label>
+                        Confirme o e-mail:<br>
+                        <input type="email">
+                    </label>
+                    <label>
+                        Redes Sociais:<br>
+                        <input type="email">
+                    </label>
+                    <label>
+                        <br>
+                        <input type="email">
+                    </label>
+                    <button>SALVAR</button>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </form>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>
