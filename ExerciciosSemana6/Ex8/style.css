@@ -25,13 +25,24 @@ button {
     row-gap: 20px;
 }
 
-.perfil-container {
+/* .perfil-container {
     display: flex;
     column-gap: 10px;
+
+} */
+
+
+.perfil-container {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    grid-template-areas: "previa previa";
 }
 
 
-.perfil-container section {
+/* .perfil-container section {
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
@@ -44,17 +55,45 @@ button {
 
 .perfil-container section:nth-of-type(2) {
     flex-grow: 2;
-}
+} */
 
-.perfil-container header {
-    border-radius: 8px 8px 0 0;
+.perfil-container section {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+
 }
 
 #previa {
+    grid-area: previa;
+}
+
+
+#previa {
+    display: grid;
+    grid-template-rows: 1fr 9fr;
     height: fit-content;
     padding: 20px;
     text-align: center;
     font-family: 'Varela Round', sans-serif;
+}
+
+#previa-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#profile-edit-btn {
+    width: 4em;
+    height: 4em;
+    background: rgba(0, 212, 255, 0.4);
+    border-radius: 4em;
+    border: 0.7px solid gray;
+}
+
+#profile-edit-btn:hover {
+    background: rgba(163, 59, 255, 0.5);
+    transition: 1s;
 }
 
 #previa img {
@@ -63,7 +102,7 @@ button {
     border-radius: 50%;
 }
 
-#previa article {
+#previa fieldset {
     background: rgb(241, 241, 241);
     padding: 10px;
     border: 1px solid rgb(180, 180, 180);
@@ -72,7 +111,10 @@ button {
 }
 
 #formulario {
-    
+    height: fit-content;
+    display: none;
+    grid-area: formulario;
+    transition: 1s;
 }
 
 #formulario header {
@@ -80,6 +122,7 @@ button {
     margin: 0;
     background-color: rgb(241, 241, 241);
     border-bottom: 1px solid rgb(180, 180, 180);
+    border-radius: 8px 8px 0 0;
 }
 
 #formulario h2 {
@@ -89,6 +132,16 @@ button {
 
 #formulario nav {
     padding-left: 20px;
+}
+
+#formulario input {
+    height: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: 'Arimo', sans-serif;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-style: none;
 }
 
 .nav-btn {
@@ -115,14 +168,8 @@ button {
     font-size: medium;
 }
 
-#formulario input {
-    height: 20px;
-    padding: 5px;
-    margin-top: 10px;
-    font-family: 'Arimo', sans-serif;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-style: none;
+#profile {
+    display: none;
 }
 
 #salvar {
@@ -130,8 +177,10 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-input:focus {
-    box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.63);
+#formulario input:focus {
+    box-shadow: 0 4px 8px 0 rgba(163, 59, 255, 0.9436392914653784);
+    outline: unset;
+    transition: 0.6s;
 }
 
 .drag-container {

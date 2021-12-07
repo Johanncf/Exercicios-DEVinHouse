@@ -50,3 +50,8 @@ document.querySelectorAll('.nav-btn').forEach(button => {
         showForm(this.dataset.edit);
     }
 })
+
+document.getElementById("profile-edit-btn").onclick = function() {
+    document.querySelector(".perfil-container").style.gridTemplateAreas = '"previa formulario"';
+    document.querySelector("#formulario").style.display = "block";
+}

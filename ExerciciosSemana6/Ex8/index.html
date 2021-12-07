@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Baloo+Bhaijaan+2&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,18 +22,28 @@
         </header>
         <div class="perfil-container">
             <section id="previa">
-                <h3>Jane Doe</h3>
-                <h4>@jane</h4>
-                <img
-                    src="https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                <article>
-                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
-                    visual form of a document or a typeface without relying on meaningful content.
-                </article>
-                <br><br><br><br><br>
-                <footer>
-                    <p>Ultima atualização em <strong>04 de dezembro</strong></p>
-                </footer>
+                <div id="previa-header">
+                    <button id="profile-edit-btn"><i class="fas fa-user-edit fa-2x"></i></button>
+                </div>
+                <div id="previa-body">
+                    <h3>Jane Doe</h3>
+                    <h4>@jane</h4>
+                    <img
+                        src="https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <article>
+                        <fieldset>
+                            <legend>
+                                Sobre
+                            </legend>
+                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+                        visual form of a document or a typeface without relying on meaningful content.
+                        </fieldset>
+                    </article>
+                    <br><br><br><br><br>
+                    <footer>
+                        <p>Ultima atualização em <span><strong>04 de dezembro</strong></span></p>
+                    </footer>
+                </div>
             </section>
             <section id="formulario">
                 <header>
