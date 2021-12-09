@@ -98,9 +98,10 @@ saveBtns.forEach((btn) => {
         e.preventDefault()
         if (novoSobre.value) {
             sobreHomepage.innerText = novoSobre.value
+            novoSobre.value = ''
         }
 
-        if (fotosDePerfil.length) {
+        if (fotosDePerfil.length > 1) {
             fotosDePerfil.splice(0, 1)
         }
 
