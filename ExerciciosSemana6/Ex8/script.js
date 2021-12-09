@@ -1,27 +1,38 @@
-function dropHandler(ev) {
-    console.log('File(s) dropped');
+const foto = document.querySelector('#foto')
+const dragContainer = document.querySelector('.drag-container ')
+const inputFile = document.querySelector('#input-file')
+const editForm = document.querySelectorAll(".edit")
+const editProfileBtn = document.getElementById("profile-edit-btn")
+const perfilContainer = document.querySelector(".perfil-container")
+const formulario = document.querySelector("#formulario")
+const navBtns = document.querySelectorAll('.nav-btn')
+const saveBtns = document.querySelectorAll('.salvar')
+const sobreHomepage = document.querySelector('#sobre-homepage').querySelector('span')
+const novoSobre = document.querySelector('#sobre')
+const closeBtn = document.querySelector('#close-btn')
 
+const primeiraFoto = {
+    result: 'https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+}
+
+const fotosDePerfil = [primeiraFoto]
+
+
+function dropHandler(ev) {
     // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
     ev.preventDefault();
 
-    if (ev.dataTransfer.items) {
+    if (ev.dataTransfer.files.length && ev.dataTransfer.files[0].type.startsWith('image/')) {
         // Use a interface DataTransferItemList para acessar o (s) arquivo (s)
-        for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-            // Se os itens soltos não forem arquivos, rejeite-os
-            if (ev.dataTransfer.items[i].kind === 'file') {
-                var file = ev.dataTransfer.items[i].getAsFile();
-                console.log('... file[' + i + '].name = ' + file.name);
-            }
-        }
-    } else {
-        // Use a interface DataTransfer para acessar o (s) arquivo (s)
-        for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-            console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-        }
+        const dragReader = new FileReader()
+        dragReader.readAsDataURL(ev.dataTransfer.files[0])
+        fotosDePerfil.push(dragReader)
+        trocaFoto(foto, dragReader)
+
     }
 
-    document.querySelector('.drag-container ').style.backgroundColor = ''
-    document.querySelector('.drag-container ').style.borderColor = 'black'
+    dragContainer.style.backgroundColor = ''
+    dragContainer.style.borderColor = 'black'
 }
 
 function dragOverHandler(ev) {
@@ -29,29 +40,93 @@ function dragOverHandler(ev) {
 
     // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
     ev.preventDefault();
-    document.querySelector('.drag-container ').style.borderColor = 'rgb(135 91 223)'
-    document.querySelector('.drag-container ').style.backgroundColor = 'rgb(124 54 239 / 25%)'
+
+    dragContainer.style.borderStyle = 'solid'
+    dragContainer.style.borderColor = 'rgb(135 91 223)'
+    dragContainer.style.backgroundColor = 'rgb(124 54 239 / 25%)'
 }
 
 function leaveHandler(ev) {
-    document.querySelector('.drag-container ').style.backgroundColor = ''
-    document.querySelector('.drag-container ').style.borderColor = ''
+    dragContainer.style.backgroundColor = ''
+    dragContainer.style.borderColor = ''
+    dragContainer.style.borderStyle = 'dashed'
 }
 
 function showForm(form) {
-    document.querySelectorAll(".edit").forEach(page => {
+    editForm.forEach(page => {
         page.style.display = "none";
     })
     document.querySelector(`#${form}`).style.display = "grid";
 }
 
-document.querySelectorAll('.nav-btn').forEach(button => {
-    button.onclick = function() {
+navBtns.forEach(button => {
+    button.onclick = function () {
         showForm(this.dataset.edit);
     }
 })
 
-document.getElementById("profile-edit-btn").onclick = function() {
-    document.querySelector(".perfil-container").style.gridTemplateAreas = '"previa formulario"';
-    document.querySelector("#formulario").style.display = "block";
+editProfileBtn.onclick = function () {
+    perfilContainer.style.gridTemplateAreas = '"previa previa formulario formulario"';
+    formulario.style.display = "block";
+    editProfileBtn.style.display = "none";
+}
+
+dragContainer.onclick = function () {
+    inputFile.click()
+}
+
+inputFile.addEventListener('change', () => {
+    console.log(inputFile.files)
+
+    const inputReader = new FileReader()
+    inputReader.readAsDataURL(inputFile.files[0])
+
+    console.log(inputReader)
+    fotosDePerfil.push(inputReader)
+    
+    if (inputFile.files.length) {
+        trocaFoto(foto, inputReader)
+    }
+})
+
+function trocaFoto(tag, reader) {
+
+    reader.onload = () => {
+        tag.src = `${reader.result}`
+    }
+
+}
+
+saveBtns.forEach((btn) => {
+    btn.onclick = function (e) {
+        e.preventDefault()
+        if (novoSobre.value) {
+            sobreHomepage.innerText = novoSobre.value
+        }
+        fotosDePerfil.splice(0, 1)
+        perfilContainer.style.gridTemplateAreas = '". previa previa ."';
+        formulario.style.display = "none";
+        editProfileBtn.style.display = "";
+
+        dragContainer.style.backgroundColor = ''
+        dragContainer.style.borderColor = ''
+        dragContainer.style.borderStyle = 'dashed'
+    }
+})
+
+closeBtn.onclick = function () {
+    foto.src = fotosDePerfil[0].result
+
+    if (fotosDePerfil.length > 1) {
+        fotosDePerfil.pop()
+        trocaFoto(foto, fotosDePerfil[0])
+    }
+
+    perfilContainer.style.gridTemplateAreas = '". previa previa ."';
+    formulario.style.display = "none";
+    editProfileBtn.style.display = "";
+
+    dragContainer.style.backgroundColor = ''
+    dragContainer.style.borderColor = ''
+    dragContainer.style.borderStyle = 'dashed'
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -28,15 +28,14 @@
                 <div id="previa-body">
                     <h3>Jane Doe</h3>
                     <h4>@jane</h4>
-                    <img
-                        src="https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <img src="https://images.pexels.com/photos/10341144/pexels-photo-10341144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="foto">
                     <article>
-                        <fieldset>
+                        <fieldset id="sobre-homepage">
                             <legend>
                                 Sobre
                             </legend>
-                        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
-                        visual form of a document or a typeface without relying on meaningful content.
+                        <span>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+                        visual form of a document or a typeface without relying on meaningful content.</span>
                         </fieldset>
                     </article>
                     <br><br><br><br><br>
@@ -47,7 +46,10 @@
             </section>
             <section id="formulario">
                 <header>
-                    <h2>Editar Perfil</h2>
+                    <div id="header-div">
+                        <h2>Editar Perfil</h2>
+                        <button id="close-btn"><i class="fas fa-times fa-2x"></i></button>
+                    </div>
                     <nav>
                         <button class="nav-btn" data-edit="infos">Infos</button>
                         <button class="nav-btn" data-edit="profile">Perfil</button>
@@ -80,19 +82,29 @@
                         <input autocomplete="off" type="email">
                     </label>
                     <label>
-                        Redes Sociais:<br>
+                        Linkedin:<br>
                         <input autocomplete="off" type="email">
                     </label>
                     <label>
-                        <br>
+                        Github:<br>
                         <input autocomplete="off" type="email">
                     </label>
-                    <button id="salvar">SALVAR</button>
+                    <button class="salvar">SALVAR</button>
                 </form>
                 <form id="profile" class="edit">
-                    <div class="drag-container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="leaveHandler(event)">
-                        <i class="fas fa-file-upload fa-3x"></i>
-                        <p>Arraste os arquivos para fazer upload</p>
+                    <div class="profile-input-fields">
+                        <div class="drag-container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="leaveHandler(event)">
+                            <input type="file" id="input-file">
+                            <p>Arraste ou clique para fazer upload da foto de perfil</p>
+                        </div>
+                        <label for="sobre" id="sobre-label">
+                            Sobre:<br>
+                            <textarea id="sobre"></textarea>
+                        </label>
+                        
+                    </div>
+                    <div id="save-div-btn">
+                        <button class="salvar">SALVAR</button>
                     </div>
                 </form>
             </section>
