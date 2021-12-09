@@ -36,8 +36,6 @@ function dropHandler(ev) {
 }
 
 function dragOverHandler(ev) {
-    console.log('File(s) in drop zone');
-
     // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
     ev.preventDefault();
 
@@ -76,12 +74,10 @@ dragContainer.onclick = function () {
 }
 
 inputFile.addEventListener('change', () => {
-    console.log(inputFile.files)
-
+    
     const inputReader = new FileReader()
     inputReader.readAsDataURL(inputFile.files[0])
 
-    console.log(inputReader)
     fotosDePerfil.push(inputReader)
     
     if (inputFile.files.length) {
@@ -103,7 +99,11 @@ saveBtns.forEach((btn) => {
         if (novoSobre.value) {
             sobreHomepage.innerText = novoSobre.value
         }
-        fotosDePerfil.splice(0, 1)
+
+        if (fotosDePerfil.length) {
+            fotosDePerfil.splice(0, 1)
+        }
+
         perfilContainer.style.gridTemplateAreas = '". previa previa ."';
         formulario.style.display = "none";
         editProfileBtn.style.display = "";
