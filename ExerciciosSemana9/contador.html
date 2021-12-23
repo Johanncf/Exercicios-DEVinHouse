@@ -13,11 +13,22 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="contador.jsx" type="module"></script>
     <script type="text/babel">
         const rootElement = document.getElementById('root')
-        const element = <div className="container">Hello</div>
+        function Contador() {
+            const [contador, setContador] = React.useState(0)
+
+            
+            setInterval(setContador((cont) => cont++), 1000)
+            
+            // console.log(contador)
+            return (
+                <div>{contador}</div>
+            );
+        }
         
-        ReactDOM.render(element, rootElement)
+        ReactDOM.render(<Contador />, rootElement)
     </script>
 </body>
 
