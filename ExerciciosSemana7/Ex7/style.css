@@ -1,0 +1,21 @@
+.base-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.pet{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 300px;
+    width: 30%;
+}
